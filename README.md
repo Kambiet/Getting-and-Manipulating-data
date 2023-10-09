@@ -43,13 +43,9 @@ library(readxl)
 "https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
 ##Extract the data from the zip into a folder labelled "UCI HAR Dataset" in your desired working directory
 
-@Kambiet	Reply…
 
-@Kambiet
-Kambiet 6 minutes ago Author Owner
-run_analysis <- function() {
 
-Merges the training and the test sets to create one data set.
+#Merges the training and the test sets to create one data set.
 Create data frames for training data
 x_train <- as.data.frame(readLines(paste0(getwd(),"/","UCI HAR Dataset/train/X_train.txt")), stringsAsFactors = FALSE)
 colnames(x_train) <- "Measurements"
@@ -58,7 +54,7 @@ colnames(y_train) <- "Activity label"
 subject_train <- as.data.frame(readLines(paste0(getwd(),"/","UCI HAR Dataset/train/subject_train.txt")))
 colnames(subject_train) <- "Subject"
 
-Create data frames for test data
+#Create data frames for test data
 x_test <- as.data.frame(readLines(paste0(getwd(),"/","UCI HAR Dataset/test/X_test.txt")), stringsAsFactors = FALSE)
 colnames(x_test) <- "Measurements"
 y_test <- as.data.frame(readLines(paste0(getwd(),"/","UCI HAR Dataset/test/y_test.txt")))
@@ -66,12 +62,12 @@ colnames(y_test) <- "Activity label"
 subject_test <- as.data.frame(readLines(paste0(getwd(),"/","UCI HAR Dataset/test/subject_test.txt")))
 colnames(subject_test) <- "Subject"
 
-Merge datasets
+#Merge datasets
 X_total <- rbind(x_train, x_test)
 y_total <- rbind(y_train, y_test)
 subject_total <- rbind(subject_train, subject_test)
 
-Extracts only the measurements on the mean and standard deviation for each
+#Extracts only the measurements on the mean and standard deviation for each
 measurement.
 1. Go through the features.txt, create a vector that contains the indecies of
 mean and std
@@ -108,9 +104,8 @@ colnames(featuresVec) <- c("featureindex", "featuredesc")
 #Creates a second, independent tidy data set with the average of each variable
 #for each activity and each subject.
 
-}
 
-NOTES
+#NOTES
 We have three files -
 1. X_train.txt - each line contains 561 measurements from various sensors
 subject_train.txt - each line contains one number to ID the subject from 1-30
