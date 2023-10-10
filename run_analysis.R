@@ -1,6 +1,6 @@
 # Getting-and-Manipulating-data
 Contains codes and data for the Getting and Cleaning data sub-course of the 10 module John Hopkins schools Data science Course.
-run_analysis <- function() {
+
 
 Merges the training and the test sets to create one data set.
 Create data frames for training data
@@ -61,4 +61,4 @@ colnames(featuresVec) <- c("featureindex", "featuredesc")
 #Creates a second, independent tidy data set with the average of each variable
 #for each activity and each subject.
 
-}
+
